@@ -1,76 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/Bootstrap/css/bootstrap.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/Bootstrap/css/bootstrap.css" />
     <title>Authentification</title>
-</head>
+  </head>
 
-<body>
-
-    <div class="container  justify-content-center  mt-5">
-        <h2>Inscription</h2>
-        <div class="card text-white bg-dark bg-gradient shadow-lg" style="width: 22rem;">
-            <div class="card-body">
-                <h3 class="card-title text-center mb-4">Inscription</h3>
-                <form action="" id="formInscrip">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nom d'utilisateur</label>
-                        <input id="userName" type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Email</label>
-                        <input id="mail" type="email" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Mot de passe</label>
-                        <input id="mdp" type="password" class="form-control">
-                    </div>
-                    <div>
-                        <button type="submit" id="inscriptionButton" class="btn btn-primary">S'inscrire</button>
-                    </div>
-                </form>
+  <body>
+    <div class="container justify-content-center mt-5">
+      <h2>Inscription</h2>
+      <div
+        class="card text-white bg-dark bg-gradient shadow-lg"
+        style="width: 22rem"
+      >
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Inscription</h3>
+          <form action="" id="formInscrip">
+            <div class="mb-3">
+              <label for="" class="form-label">Nom d'utilisateur</label>
+              <input id="userName" type="text" class="form-control" />
             </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Email</label>
+              <input id="mail" type="email" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Mot de passe</label>
+              <input id="mdp" type="password" class="form-control" />
+            </div>
+            <div>
+              <button
+                type="submit"
+                id="inscriptionButton"
+                class="btn btn-primary"
+              >
+                S'inscrire
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-
-
-
-
-
+    <!-- J'ai commenté parce que le prof a dit de le faire, mais j'ai vu que ça ne marchait pas. -->
+    <!-- <h3>Inscription</h3>
+    <form onsubmit="register(event)">
+      <input type="text" id="name" placeholder="Nom" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input
+        type="password"
+        id="password"
+        placeholder="Mot de passe"
+        required
+      />
+      <button type="submit">S'inscrire</button>
+    </form> -->
 
     <!-- Formulaire de connexion -->
-    <div class="container d-flex justify-content-center align-items-center vh-100 mt-5">
-        <div class="card text-white bg-secondary bg-gradient shadow-lg" style="width: 22rem;">
-            <div class="card-body">
-                <h3 class="card-title text-center mb-4">Connexion</h3>
-                <form action="" id="formConnexion">
-                    <div class="mb-3">
-                        <label for="mailConnexion" class="form-label">Email</label>
-                        <input id="mailConnexion" type="email" class="form-control" placeholder="Entrez votre email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="mdpConnexion" class="form-label">Mot de passe</label>
-                        <input id="mdpConnexion" type="password" class="form-control"
-                            placeholder="Entrez votre mot de passe">
-                    </div>
-                    <button type="submit" id="connexionButton" class="btn btn-light w-100 text-primary fw-bold">Se
-                        connecter
-                    </button>
-                </form>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100 mt-5"
+    >
+      <div
+        class="card text-white bg-secondary bg-gradient shadow-lg"
+        style="width: 22rem"
+      >
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Connexion</h3>
+          <form action="" id="formConnexion">
+            <div class="mb-3">
+              <label for="mailConnexion" class="form-label">Email</label>
+              <input
+                id="mailConnexion"
+                type="email"
+                class="form-control"
+                placeholder="Entrez votre email"
+              />
             </div>
+            <div class="mb-3">
+              <label for="mdpConnexion" class="form-label">Mot de passe</label>
+              <input
+                id="mdpConnexion"
+                type="password"
+                class="form-control"
+                placeholder="Entrez votre mot de passe"
+              />
+            </div>
+            <button
+              type="submit"
+              id="connexionButton"
+              class="btn btn-light w-100 text-primary fw-bold"
+            >
+              Se connecter
+            </button>
+          </form>
         </div>
+      </div>
     </div>
 
-
-
-
-
-
-
     <script src="assets/js/app.js"></script>
-</body>
-
+    <!-- J'ai commenté parce que le prof a dit de le faire, mais j'ai vu que ça ne marchait pas. -->
+    <!-- <script>
+      function register(e) {
+        e.preventDefault();
+        fetch("http://localhost:3000/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => alert(data.message || data.error));
+      }
+    </script> -->
+  </body>
 </html>

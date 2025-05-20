@@ -21,6 +21,18 @@ function parseBody(req, callback) {
 }
 // création du serveur http
 const server = http.createServer((req, res) => {
+  // CORS
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // Requête préliminaire OPTIONS (pour les navigateurs)
+  if (req.method === "OPTIONS") {
+    res.writeHead(200);
+    return res.end();
+  }
+
+  // la gestion des url
   if (req.url === "/register" && req.method === "POST") {
     parseBody(req, (userData) => {
       const users = getUsers();

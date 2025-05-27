@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion / Inscription</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome pour les icônes -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: none;
+      }
+      .card-header {
+        background: transparent;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .tab-content {
+        padding: 2rem;
+      }
+      .form-control,
+      .form-select {
+        border-radius: 10px;
+        padding: 12px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        box-shadow: 0 0 0 0.25rem rgba(37, 117, 252, 0.25);
+        border-color: #2575fc;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+      }
+      .nav-tabs {
+        border-bottom: none;
+      }
+      .nav-tabs .nav-link {
+        border: none;
+        color: #6c757d;
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+      }
+      .nav-tabs .nav-link.active {
+        color: #2575fc;
+        background-color: transparent;
+        border-bottom: 3px solid #2575fc;
+      }
+      .input-group-text {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-right: none;
+      }
+      .password-toggle {
+        cursor: pointer;
+        padding: 0 15px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .form-text {
+        font-size: 0.85rem;
+      }
+      .social-login {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .social-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: white;
+        transition: all 0.3s ease;
+      }
+      .social-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+      .divider {
+        display: flex;
+        align-items: center;
+        margin: 1.5rem 0;
+      }
+      .divider-line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #e9ecef;
+      }
+      .divider-text {
+        margin: 0 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-white">
+            <div class="card-header">
+              <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                <li class="nav-item flex-fill text-center" role="presentation">
+                  <button
+                    class="nav-link active w-100"
+                    id="connexion-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#connexion"
+                    type="button"
+                    role="tab"
+                    aria-controls="connexion"
+                    aria-selected="true"
+                  >
+                    Connexion
+                  </button>
+                </li>
+                <li class="nav-item flex-fill text-center" role="presentation">
+                  <button
+                    class="nav-link w-100"
+                    id="inscription-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#inscription"
+                    type="button"
+                    role="tab"
+                    aria-controls="inscription"
+                    aria-selected="false"
+                  >
+                    Inscription
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content" id="authTabsContent">
+              <!-- Formulaire de Connexion -->
+              <div
+                class="tab-pane fade show active"
+                id="connexion"
+                role="tabpanel"
+                aria-labelledby="connexion-tab"
+              >
+                <form action="" id="formConnexion">
+                  <div class="mb-3">
+                    <label for="mailConnexion" class="form-label">Email</label>
+                    <input
+                      id="mailConnexion"
+                      type="email"
+                      class="form-control"
+                      placeholder="Entrez votre email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="mdpConnexion" class="form-label"
+                      >Mot de passe</label
+                    >
+                    <input
+                      id="mdpConnexion"
+                      type="password"
+                      class="form-control"
+                      placeholder="Entrez votre mot de passe"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    id="connexionButton"
+                    class="btn btn-light w-100 text-primary fw-bold"
+                  >
+                    Se connecter
+                  </button>
+                </form>
+              </div>
+
+              <!-- Formulaire d'Inscription -->
+              <div
+                class="tab-pane fade"
+                id="inscription"
+                role="tabpanel"
+                aria-labelledby="inscription-tab"
+              >
+                <form action="" id="formInscrip">
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nom d'utilisateur</label>
+                    <input id="userName" type="text" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Email</label>
+                    <input id="mail" type="email" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Mot de passe</label>
+                    <input id="mdp" type="password" class="form-control" />
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      id="inscriptionButton"
+                      class="btn btn-primary"
+                    >
+                      S'inscrire
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <!-- Scripts Bootstrap et JS personnalisé -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
